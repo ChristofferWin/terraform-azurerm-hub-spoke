@@ -38,7 +38,7 @@ module "only_hub" {
   }
 }
 module "only_spoke" {
-  source = "hashicorp/hub-spoke/azurerm"
+  source = "ChristofferWin/hub-spoke/azurerm"
   topology_object = {
     name_suffix = "contoso" //Any spoke is NOT required to follow ANY naming already done in the hub - We simply use name_suffix to showcase it
     //We wont add ANY env_name or project_name just to showcase - its ALWAYS recommended though, as naming is quite strict in the Microsoft CAF guidance

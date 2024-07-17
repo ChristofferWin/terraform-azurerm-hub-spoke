@@ -28,7 +28,7 @@ provider "azurerm" {
 //The hub and spoke EVEN though they are created in the same call, will still be created on 2 different subscriptions
 //THE HUB MUST BE DEPLOYED BEFORE ANY SPOKE MODULE CALLS ARE DEPLOYED
 module "hub-and-1-spoke" {
-  source = "hashicorp/hub-spoke/azurerm"
+  source = "ChristofferWin/hub-spoke/azurerm"
   
   topology_object = {
     name_prefix = "fabrikam"
@@ -112,7 +112,7 @@ module "hub-and-1-spoke" {
 }
 
 module "spoke2" {
-  source = "hashicorp/hub-spoke/azurerm"
+  source = "ChristofferWin/hub-spoke/azurerm"
 
   topology_object = {
     name_suffix = "cool-spoke2"
