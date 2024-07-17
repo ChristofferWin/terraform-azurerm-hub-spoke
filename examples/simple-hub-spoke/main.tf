@@ -13,7 +13,7 @@ provider "azurerm" {
 //We define the "hub" By itself in its own module call - This is to make sure custom names applied only effects any hub related resource
 //The hub must ALWAYS be deployed AHEAD OF TIME of any spokes being created in their own module calls - Any spokes created directly in the module call for the hub will be deployed successfully
 module "only_hub" {
-  source = "hashicorp/hub-spoke/azurerm"
+  source = "ChristofferWin/hub-spoke/azurerm"
 
   topology_object = {
     name_prefix = "contoso" //Because its name_prefix, the resource type of the specific resource being deployed will be the first part of the total name of each resource
@@ -34,7 +34,7 @@ module "only_hub" {
 }
 
 module "only_spoke" {
-  source = "hashicorp/hub-spoke/azurerm"
+  source = "ChristofferWin/hub-spoke/azurerm"
 
   topology_object = {
     name_suffix = "contoso" //Any spoke is NOT required to follow ANY naming already done in the hub - We simply use name_suffix to showcase it
